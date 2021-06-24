@@ -1,0 +1,57 @@
+int eA = 9; //eA = enable of motor A
+int eB = 8; //eB = enable of motor B
+int i1 = 1; //i1 = input 1
+int i2 = 2; //i2 = input 2
+int i3 = 3; //13 = input 3
+int i4 = 4; //i4 = input 4
+int D = 1000; // D for delay command
+
+void setup() {
+	
+	pinMode(eA, OUTPUT);
+	pinMode(eB, OUTPUT);
+	pinMode(i1, OUTPUT);
+	pinMode(i2, OUTPUT);
+	pinMode(i3, OUTPUT);
+	pinMode(i4, OUTPUT);
+	
+	
+}
+
+void loop() {
+	
+	analogWrite(eA, 240); // Max PWM 255, 240 save side
+	analogWrite(eB, 240); // Max PWM 255, 240 save side
+
+	//Motors ON, Direction: Clockwise
+	digitalWrite(i1, HIGH);
+	digitalWrite(i2, LOW);
+	digitalWrite(i3, HIGH);
+	digitalWrite(i4, LOW);
+  
+	delay(D);
+  
+  	// Motors OFF
+	digitalWrite(i1, LOW);
+	digitalWrite(i2, LOW);
+	digitalWrite(i3, LOW);
+	digitalWrite(i4, LOW);
+  
+    delay(D);
+	
+	// Motors ON, Direction: Anticlockwise
+	digitalWrite(i1, LOW);
+	digitalWrite(i2, HIGH);
+	digitalWrite(i3, LOW);
+	digitalWrite(i4, HIGH);
+  
+	delay(D);
+	
+	// Motors OFF
+	digitalWrite(i1, LOW);
+	digitalWrite(i2, LOW);
+	digitalWrite(i3, LOW);
+	digitalWrite(i4, LOW);
+}
+
+  
